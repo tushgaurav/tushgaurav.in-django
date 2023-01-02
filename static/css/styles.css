@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&display=swap");
+
+:root {
+  --main-color: #caf0f8;
+  --highlight-color: #03045e;
+  --font-family: "Kanit", sans-serif;
+  --font-size: 16px;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--main-color);
+}
+
+/* Sidebar Styles */
+
+.sidebar {
+  color: var(--main-color);
+  background-color: var(--highlight-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4em;
+  margin-right: 1em;
+  font-weight: 400;
+  height: 100vh;
+  text-transform: uppercase;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+.nav-link {
+  padding-bottom: 0.5em;
+}
+
+.container {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.sidebar {
+  flex: 0 0 200px;
+}
+
+/* mddia queries for main layout */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    flex: 1;
+  }
+}
