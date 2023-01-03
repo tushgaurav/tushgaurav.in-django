@@ -6,6 +6,12 @@ name = "pypi"
 [packages]
 django = "*"
 gunicorn = "*"
+python-dotenv = "*"
+sqlparse = "*"
+djangorestframework = "*"
+pytz = "*"
+asgiref = "*"
+psycopg2 = "*"
 
 [dev-packages]
 

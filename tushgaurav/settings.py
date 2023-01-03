@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+
 """
 Django settings for tushgaurav project.
 
@@ -25,7 +28,9 @@ SECRET_KEY = 'django-insecure-*r!ao55*nky7%#f-1#n^cz5vkby8*@rd6ise8ckw!dwh+-spdu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tushgaurav.in', 'www.tushgaurav.com', 'beta.tushgaurav.in']
+load_dotenv()
+
+ALLOWED_HOSTS = ['tushgaurav.in', 'www.tushgaurav.com', 'beta.tushgaurav.in', '127.0.0.1']
 
 
 # Application definition
@@ -74,11 +79,22 @@ WSGI_APPLICATION = 'tushgaurav.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': os.environ['DATABASE_NAME'],
+    'HOST': os.environ['HOST'],
+    'PORT': os.environ['PORT'],
+    'USER': os.environ['USER'],
+    'PASSWORD': os.environ['PASSWORD']
+  }
 }
 
 
