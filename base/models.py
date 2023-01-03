@@ -8,3 +8,11 @@ class Suggestion(models.Model):
 
     def __str__(self):
         return self.name + "_" + self.message[:10]
+
+
+class Quote(models.Model):
+    text = models.TextField()
+    category = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.category[:8].upper() + " " + self.text[:10]
