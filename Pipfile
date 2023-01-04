@@ -12,6 +12,7 @@ djangorestframework = "*"
 pytz = "*"
 asgiref = "*"
 psycopg2 = "*"
+whitenoise = "*"
 
 [dev-packages]
 
