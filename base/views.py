@@ -6,11 +6,13 @@ from django.db.models import F
 from .models import Suggestion, Quote
 
 def not_found(request, any):
-    quote = random.choice(list(Quote.objects.all()))
+    # Get a random quote for the 404 error screen
+    quote_list = list(Quote.objects.all())
+    random_quote = random.choice(quote_list)
 
     context = {
         "url": any,
-        "error_message": quote.text,
+        "error_message": random_quote.text,
         "code": "404"
     }
     return render(request, 'base/not_found.html', context)
