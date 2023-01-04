@@ -23,6 +23,9 @@ def index(request):
 def about(request):
     return render(request, 'base/about.html')
 
+def skills(request):
+    return render(request, 'base/skills.html')
+
 def submit_suggestion(request):
     if request.method == 'POST':
 

@@ -1,13 +1,15 @@
 {% load static %}
 <div class="sidebar">
-  <img
-    src="{% static 'images/sign_logo.png' %}"
-    alt="logo image"
-    class="logo"
-  />
+  <a href="{% url 'home' %}">
+    <img
+      src="{% static 'images/sign_logo.png' %}"
+      alt="logo image"
+      class="logo"
+    />
+  </a>
   <ul class="nav-list">
-    <li class="nav-link">about</li>
-    <li class="nav-link">skills</li>
+    <li class="nav-link"><a href="{% url 'about' %}">about</a></li>
+    <li class="nav-link"><a href="{% url 'skills' %}">skills</a></li>
     <li class="nav-link">experience</li>
     <li class="nav-link">project</li>
     <li class="nav-link">contact</li>
