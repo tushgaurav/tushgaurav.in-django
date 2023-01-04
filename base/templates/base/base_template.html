@@ -10,7 +10,10 @@
   </head>
   <body>
     <div class="container">
+      <!-- sidebar which remains stationary class=sidebar -->
       {% include 'base/sidebar.html' %}
+
+      <!-- main content goes inside this div -->
       <div class="main-content">{% block content %} {% endblock %}</div>
     </div>
   </body>
