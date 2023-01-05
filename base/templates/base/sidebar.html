@@ -7,11 +7,25 @@
       class="logo"
     />
   </a>
-  <ul class="nav-list">
-    <li class="nav-link"><a href="{% url 'about' %}">about</a></li>
-    <li class="nav-link"><a href="{% url 'skills' %}">skills</a></li>
-    <li class="nav-link">experience</li>
-    <li class="nav-link">project</li>
-    <li class="nav-link">contact</li>
-  </ul>
+
+  <div>
+    <div class="user_info">
+      {% if request.user.is_authenticated %}
+      <!--  -->
+      Welcome, {{ request.user.username }}!
+      <!--  -->
+      <a href="{% url 'logout' %}">logout</a>
+      {% else %}
+      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'register' %}">Register</a>
+      {% endif %}
+    </div>
+    <ul class="nav-list">
+      <li class="nav-link"><a href="{% url 'about' %}">about</a></li>
+      <li class="nav-link"><a href="{% url 'skills' %}">skills</a></li>
+      <li class="nav-link">experience</li>
+      <li class="nav-link">project</li>
+      <li class="nav-link">contact</li>
+    </ul>
+  </div>
 </div>
