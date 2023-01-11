@@ -3,6 +3,26 @@ Gaurav {% endblock %} {% block content %}
 
 <h3>Register</h3>
 
+<!-- MessageHandler v0.1 beta -->
+  <!-- START -->
+
+  {% if messages %}
+  <div class="messages">
+    {% for message in messages %}
+    <div {% if message.tags %} class="alert alert-white rounded alert-{{ message.tags }}" {% endif %}>
+      <div class="icon"><i class="fa fa-info-circle"></i></div>
+      <strong>
+        {% if message.tags %} {{ message.tags | capfirst }}! {% else %} Alert!
+        {% endif %}
+      </strong>
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- END -->
+
 <form method="POST" action="">
   {% csrf_token %} {{ form.as_p }}
 

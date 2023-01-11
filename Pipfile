@@ -13,6 +13,7 @@ pytz = "*"
 asgiref = "*"
 psycopg2 = "*"
 whitenoise = "*"
+django-recaptcha = "*"
 
 [dev-packages]
 

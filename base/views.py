@@ -3,13 +3,11 @@ import random
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
-from django.db.models import F
-from .models import Suggestion, Quote, Message
-
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
+from .models import Quote
 from .forms import CreateUserForm, ContactForm
 
 def not_found(request, any):
@@ -37,7 +35,7 @@ def loginUser(request):
             login(request, user)
             return redirect('home')
         else:
-            messages.info(request, "Username or password incorrect.")
+            messages.error(request, "Username or password incorrect.")
     context = {
 
     }
@@ -57,7 +55,8 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, "Account created for " + username)
-        return redirect('login')
+            return redirect('login')
+        messages.error(request, "Form is invalid!")
     else:
         form = CreateUserForm()
         context = {
@@ -80,15 +79,14 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save(request=request)
-            return redirect('home')
-        return HttpResponse("FORM DATA IS INVALID")
-        
-    else:
-        form = ContactForm()
-        context = {
-            "form": form
-        }
-        return render(request, 'base/contact.html', context)
+            messages.success(request, 'Form submitted successfully.')
+        else:
+            messages.error(request, 'Form is invalid, Please try again.')
+    form = ContactForm()
+    context = {
+        "form": form
+    }
+    return render(request, 'base/contact.html', context)
 
 
 @login_required(login_url='login')

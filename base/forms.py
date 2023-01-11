@@ -19,6 +19,10 @@ class ContactForm(forms.ModelForm):
         model = Message 
         fields = ['content']
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['content'].widget.attrs.update({'placeholder': 'Enter your message here'})
+
     def save(self, commit=True, request=None):
         instance = super(ContactForm, self).save(commit=False)
         if request and request.user.is_authenticated:
