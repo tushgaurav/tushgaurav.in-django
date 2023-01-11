@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
     'base',
+    'captcha'
 ]
 
 MIDDLEWARE = [
@@ -100,6 +101,9 @@ DATABASES = {
   }
 }
 
+# Captcha Keys
+RECAPTCHA_PUBLIC_KEY = os.environ['CAPTCH_PUB_KEY']
+RECAPTCHA_PRIVATE_KEY = os.environ['CAPTCH_PRI_KEY']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

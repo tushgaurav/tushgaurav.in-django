@@ -2,15 +2,15 @@ import random
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponseNotFound
+from django.http import HttpResponse
 from django.db.models import F
-from .models import Suggestion, Quote
+from .models import Suggestion, Quote, Message
 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-from .forms import CreateUserForm
+from .forms import CreateUserForm, ContactForm
 
 def not_found(request, any):
     # Get a random quote for the 404 error screen
@@ -76,7 +76,20 @@ def skills(request):
 
 @login_required(login_url='login')
 def contact(request):
-    return render()
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save(request=request)
+            return redirect('home')
+        return HttpResponse("FORM DATA IS INVALID")
+        
+    else:
+        form = ContactForm()
+        context = {
+            "form": form
+        }
+        return render(request, 'base/contact.html', context)
+
 
 @login_required(login_url='login')
 def submit_suggestion(request):

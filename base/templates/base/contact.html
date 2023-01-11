@@ -1,0 +1,48 @@
+{% extends 'base/base_template.html' %} {% block title %} Contact Me - Tushar
+Gaurav {% endblock %} {% block content %}
+
+<div class="form-container">
+  <form id="contact" action="" method="POST">
+    {% csrf_token %}
+    <h3>Contact Me</h3>
+    <h4>Looking for a tech-savvy friend? You've come to the right place.</h4>
+    <fieldset>
+      <input
+        placeholder="Your name"
+        type="text"
+        tabindex="1"
+        required
+        autofocus
+      />
+    </fieldset>
+    <!--     <fieldset>
+      <input placeholder="Your Email Address" type="email" tabindex="2" required>
+    </fieldset> -->
+    <fieldset>
+      <input placeholder="Your Phone Number" type="tel" tabindex="3" required />
+    </fieldset>
+
+    <fieldset>
+      {{ form.content }}
+      <!-- <textarea
+        name="content"
+        placeholder="Type your Message Here...."
+        tabindex="5"
+        required
+      ></textarea> -->
+    </fieldset>
+    <fieldset>{{ form.captcha }}</fieldset>
+    <fieldset>
+      <button
+        name="submit"
+        type="submit"
+        id="contact-submit"
+        data-submit="...Sending"
+      >
+        Send Message
+      </button>
+    </fieldset>
+  </form>
+</div>
+
+{% endblock %}
