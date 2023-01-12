@@ -89,7 +89,7 @@ body {
 }
 
 li a,
-.user_info a {
+.sidebar a {
   text-decoration: none;
   color: var(--main-color);
   display: flex;
