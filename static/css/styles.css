@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
 :root {
   --main-color: #caf0f8;
   --highlight-color: #03045e;
   --white: rgb(252, 252, 252);
+  --black: rgb(12, 12, 12);
 
   /* form color */
   --base-color: #03045e;
@@ -13,6 +15,7 @@
     0 5px 5px 0 rgba(0, 0, 0, 0.24);
 
   --font-family: "Kanit", sans-serif;
+  --font-family-text: "Lato", sans-serif;
   --font-size: 16px;
 }
 
@@ -85,7 +88,8 @@ body {
   font-weight: 500;
 }
 
-a {
+li a,
+.user_info a {
   text-decoration: none;
   color: var(--main-color);
   display: flex;
@@ -95,6 +99,15 @@ a {
 
 .container {
   display: flex;
+}
+
+/* Utility Classes */
+h1 {
+  padding-left: 1rem;
+}
+
+h2 {
+  font-size: 1.6em;
 }
 
 /* grid layout */
@@ -294,6 +307,39 @@ fieldset {
 }
 :-ms-input-placeholder {
   color: #888;
+}
+
+/* Blog Styles */
+.blog-condensed-view {
+  font-family: var(--font-family-text);
+  max-width: 80ch;
+  padding: 1em;
+}
+
+.blogs .title {
+  text-decoration: none;
+  color: var(--black);
+  display: block;
+  font-size: 1.4em;
+  line-height: 90%;
+  font-weight: 700;
+}
+
+.blogs .title:hover {
+  color: var(--base-color);
+}
+
+.blogs .author {
+  color: var(--base-color);
+  margin: 0 0 0.6em 0;
+}
+
+.blogs .date {
+  display: inline-block;
+  color: gray;
+  font-size: 0.9em;
+  margin: 0 0 0.6em 0;
+  font-weight: 300;
 }
 
 /* mddia queries for main layout */

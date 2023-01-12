@@ -1,0 +1,20 @@
+{% extends 'base/base_template.html' %}
+{% block title %}
+Blogs - Tushar Gaurav
+{% endblock %}
+
+{% block content %}
+<div class="blogs">
+
+<div class="blog-extended-view">
+<h2>{{ blog.title }}</h2>
+<span class="author">{{ blog.author }}</span>
+<span class="date">
+    <span class="date-full">{{ blog.created_on.date }}</span>
+    <span class="time">{{ blog.created_on.time }}</span>
+</span>
+<p class="content">{{ blog.content }}</p>
+</div>
+
+</div>
+{% endblock %}

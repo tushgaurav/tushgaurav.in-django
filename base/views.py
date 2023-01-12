@@ -7,8 +7,23 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-from .models import Quote
+from .models import Quote, Post
 from .forms import CreateUserForm, ContactForm
+
+
+def postView(request):
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    context = {
+        'posts': queryset
+    }
+    return render(request, 'base/post_condensed.html', context)
+
+def postDetail(request, slug):
+    post = Post.objects.get(slug=slug)
+    context = {
+        'blog': post
+    }
+    return render(request, 'base/post_detailed.html', context)
 
 def not_found(request, any):
     # Get a random quote for the 404 error screen

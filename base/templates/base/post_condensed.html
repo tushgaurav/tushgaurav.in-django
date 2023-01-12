@@ -1,0 +1,21 @@
+{% extends 'base/base_template.html' %}
+{% block title %}
+Blogs - Tushar Gaurav
+{% endblock %}
+
+{% block content %}
+<h1>Blog Posts</h1>
+<div class="blogs">
+{% for blog in posts %}
+  <div class="blog-condensed-view">
+    <a href="{% url 'post_detailed' blog.slug %}" class="title">{{ blog.title }}</a>
+    <span class="author">{{ blog.author }}</span>
+    <span class="date">
+      <span class="date-full">{{ blog.created_on.date }}</span>
+      <span class="time">{{ blog.created_on.time }}</span>
+    </span>
+    <p class="content">{{ blog.content|truncatechars:200 }}</p>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
