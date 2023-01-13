@@ -102,12 +102,88 @@ li a,
 }
 
 /* Utility Classes */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 h1 {
   padding-left: 1rem;
 }
 
 h2 {
   font-size: 1.6em;
+}
+
+/* Homepage Styles */
+.hero {
+  margin-top: 2em;
+}
+
+.hero > div {
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+}
+
+.hero > div > div {
+  width: 50%;
+}
+
+.hero > div > img {
+  width: 50%;
+  max-width: 300px;
+}
+
+.branding {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 3em;
+  line-height: 84%;
+  letter-spacing: -0.04em;
+  color: var(--highlight-color);
+  max-width: 20ch;
+  padding: 0;
+}
+
+.bio {
+  font-family: var(--font-family-text);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5em;
+  line-height: 84%;
+  max-width: 50ch;
+}
+
+.button-container {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 1em;
+}
+
+.hero-button {
+  padding: 0.5em 1em;
+  background: var(--base-color);
+  border-radius: 10px;
+  color: var(--main-color);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1.3em;
+  line-height: 48px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.plain-button {
+  font-weight: 400;
+  font-size: 1.3em;
+  line-height: 36px;
+  text-decoration: none;
 }
 
 /* grid layout */
@@ -344,6 +420,10 @@ fieldset {
 
 /* mddia queries for main layout */
 @media (max-width: 768px) {
+  .hero {
+    margin-top: 0.2em;
+  }
+
   .container {
     flex-direction: column;
   }
@@ -365,6 +445,19 @@ fieldset {
 }
 
 @media (max-width: 480px) {
+  .hero > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero > div > div {
+    width: 100%;
+  }
+
+  .hero > div > img {
+    width: 100%;
+  }
+
   .grid-item {
     width: 100%; /* Change the width to full screen on very small screens */
   }

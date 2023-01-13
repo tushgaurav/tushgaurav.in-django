@@ -1,3 +1,50 @@
-{% extends 'base/base_template.html' %} {% block title %} Tushar Gaurav |
-Software Developer & Graphic Designer {% endblock %} {% block content %} Hi,
-this is me! {% endblock %}
+{% extends 'base/base_template.html' %} 
+
+{% load static %}
+
+{% block title %} 
+Tushar Gaurav | Software Developer & Graphic Designer 
+{% endblock %} 
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/blob_position.css' %}">
+<script src="https://kit.fontawesome.com/4ef8f405a5.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %} 
+
+
+<img src="{% static 'images/homepage/blobs/blob1.png' %}" alt="Blob Image 1" class="blob-1">
+<img src="{% static 'images/homepage/blobs/blob2.png' %}" alt="Blob Image 1" class="blob-2">
+<img src="{% static 'images/homepage/blobs/blob3.png' %}" alt="Blob Image 1" class="blob-3">
+<img src="{% static 'images/homepage/blobs/blob4.png' %}" alt="Blob Image 1" class="blob-4">
+
+
+<div class="center">
+    <section class="hero">
+        <div>
+            <div>
+                <h1 class="branding">FRONT END DESIGNER, WEB DEVELOPER AND 3D ARTIST</h1>
+                <div class="button-container">
+                    <a href="https://www.behance.net/tushgaurav" target="_blank" class="hero-button">Designs</a>
+                    <a href="https://linktr.ee/tushgaurav" target="_blank" class="plain-button">View Profiles <i class="fa-solid fa-square-up-right"></i></a>
+                </div>
+            </div>
+            <img src="{% static 'images/homepage/hero_img.png' %}" alt="">
+        </div>
+
+        <p class="bio">
+            I'm a software developer and graphic designer
+            with a knack for creating visually stunning 
+            and intuitive designs. I take pride in my ability 
+            to bring ideas to life and love nothing more than 
+            helping my clients achieve their goals. Take a look
+            at my portfolio to see some of my past projects, 
+            and don't hesitate to get in touch if you have a
+            project in mind – I'm always up for a new challenge!
+        </p>
+
+    </section>
+</div>
+
+{% endblock %}
