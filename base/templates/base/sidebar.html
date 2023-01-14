@@ -8,7 +8,11 @@
     />
   </a>
 
-  <div>
+  <a href="#" id="menu-icon">
+    <i class="fa-solid fa-bars"></i>
+  </a>
+
+  <div class="nav">
     <div class="user_info">
       {% if request.user.is_authenticated %}
       <!--  -->
@@ -20,6 +24,7 @@
       <a href="{% url 'register' %}">Register</a>
       {% endif %}
     </div>
+    
     <ul class="nav-list">
       <li class="nav-link"><a href="{% url 'posts' %}">blog</a></li>
       <li class="nav-link"><a href="{% url 'about' %}">about</a></li>
@@ -28,5 +33,6 @@
       <li class="nav-link">project</li>
       <li class="nav-link"><a href="{% url 'contact' %}">contact</a></li>
     </ul>
+  
   </div>
 </div>

@@ -34,3 +34,12 @@
   bottom: 25px;
   transform: rotate(-30deg);
 }
+
+@media (max-width: 480px) {
+  .blob-1,
+  .blob-2,
+  .blob-3,
+  .blob-4 {
+    display: none;
+  }
+}

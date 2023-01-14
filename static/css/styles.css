@@ -70,6 +70,13 @@ body {
   text-transform: none;
 }
 
+#menu-icon {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: url(menu-icon.png) center no-repeat;
+}
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -441,6 +448,29 @@ fieldset {
 
   .grid-item {
     width: 50%; /* Change the width to half the screen on smaller screens */
+  }
+}
+
+/* Responsive Nav styles */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    display: none;
+  }
+  nav li {
+    display: block;
+    text-align: center;
+  }
+  #menu-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
 }
 
