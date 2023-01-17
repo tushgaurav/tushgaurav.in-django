@@ -1,7 +1,9 @@
-{% extends 'base/base_template.html' %} {% block title %} Register | Tushar
-Gaurav {% endblock %} {% block content %}
+{% extends 'base/base_template.html' %}
 
-<h3>Register</h3>
+{% block title %} Register | Tushar Gaurav 
+{% endblock %} 
+
+{% block content %}
 
 <!-- MessageHandler v0.1 beta -->
   <!-- START -->
@@ -23,10 +25,27 @@ Gaurav {% endblock %} {% block content %}
 
   <!-- END -->
 
-<form method="POST" action="">
+  <div class="form">
+    <form class="login-form" method="POST" action="">
+        {% csrf_token %}
+        {{ form.name }}
+        {{ form.username }}
+        {{ form.email }}
+        {{ form.password1 }}
+        {{ form.password2 }}
+        {{ form.captcha }}
+        <button type="submit">register</button>
+        <p class="message">
+          Already have a account? <a href="{% url 'register' %}">login</a>
+        </p>
+    </form>
+  </div>
+
+  <!-- Old Django Default form -->
+<!-- <form method="POST" action="">
   {% csrf_token %} {{ form.as_p }}
 
   <input type="submit" value="Register" />
-</form>
+</form> -->
 
 {% endblock %}

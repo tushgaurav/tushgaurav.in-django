@@ -64,14 +64,27 @@ def logoutUser(request):
 def register(request):
     if request.user.is_authenticated:
         return redirect('home')
+    
     if request.method == "POST":
         form = CreateUserForm(request.POST)
         if form.is_valid():
-            form.save()
+            name = form.cleaned_data['name'].strip()
+            try:
+                first_name, last_name = name.split(" ", 1)
+                user = form.save(commit=False)
+                user.first_name = first_name
+                user.last_name = last_name
+            except ValueError:
+                first_name = name
+                user = form.save(commit=False)
+                user.first_name = first_name
+            finally:
+                user.save()
             username = form.cleaned_data.get('username')
             messages.success(request, "Account created for " + username)
             return redirect('login')
         messages.error(request, "Form is invalid!")
+        return render(request, 'base/login.html')
     else:
         form = CreateUserForm()
         context = {
