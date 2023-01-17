@@ -2,4 +2,4 @@ db.sqlite3
 .env
 staticfiles
 .prettierignore
-__pycache__/
+__pycache__
