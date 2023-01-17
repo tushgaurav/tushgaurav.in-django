@@ -26,7 +26,7 @@ Gaurav {% endblock %} {% block content %}
     {% csrf_token %}
     <h3>Contact Me</h3>
     <h4>Looking for a tech-savvy friend? You've come to the right place.</h4>
-    <fieldset>
+    <!-- <fieldset>
       <input
         placeholder="Your name"
         type="text"
@@ -34,14 +34,15 @@ Gaurav {% endblock %} {% block content %}
         required
         autofocus
       />
-    </fieldset>
+    </fieldset> -->
     <!--     <fieldset>
       <input placeholder="Your Email Address" type="email" tabindex="2" required>
     </fieldset> -->
-    <fieldset>
-      <input placeholder="Your Phone Number" type="tel" tabindex="3" required />
-    </fieldset>
 
+    
+    <fieldset>
+      {{ form.contact_number }}
+    </fieldset>
     <fieldset>
       {{ form.content }}
       <!-- <textarea
@@ -50,7 +51,7 @@ Gaurav {% endblock %} {% block content %}
         tabindex="5"
         required
       ></textarea> -->
-    </fieldset>
+    </fieldset
     <fieldset>{{ form.captcha }}</fieldset>
     <fieldset>
       <button

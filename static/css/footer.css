@@ -1,0 +1,13 @@
+footer {
+  display: none;
+  background-color: var(--highlight-color);
+  color: var(--main-color);
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  footer {
+    display: block;
+  }
+}

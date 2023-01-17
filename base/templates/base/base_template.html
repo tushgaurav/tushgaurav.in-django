@@ -11,6 +11,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" href="{% static 'css/messages.css' %}" />
 
     <!-- favicons -->
@@ -33,6 +34,7 @@
       <!-- main content goes inside this div -->
       <div class="main-content">{% block content %} {% endblock %}</div>
     </div>
+    {% include 'base/mobile_footer.html' %}
     <script src="{% static 'scripts/responsive_nav.js' %}"></script>
   </body>
 </html>
