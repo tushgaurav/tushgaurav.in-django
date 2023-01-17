@@ -101,8 +101,10 @@ def about(request):
 def skills(request):
     return render(request, 'base/skills.html')
 
-@login_required(login_url='login')
 def contact(request):
+    if not request.user.is_authenticated:
+        messages.warning(request, 'You need to login to fill the contact form')
+        return redirect('login')
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
