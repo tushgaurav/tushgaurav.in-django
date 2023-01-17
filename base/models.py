@@ -25,6 +25,7 @@ class Quote(models.Model):
 class Message(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
+    contact_number = models.CharField(max_length=15)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

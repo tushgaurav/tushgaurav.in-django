@@ -29,11 +29,12 @@ class ContactForm(forms.ModelForm):
 
     class Meta:
         model = Message 
-        fields = ['content']
+        fields = ['content', 'contact_number']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['content'].widget.attrs.update({'placeholder': 'Enter your message here'})
+        self.fields['contact_number'].widget.attrs.update({'placeholder': "Enter your phone number here"})
 
     def save(self, commit=True, request=None):
         instance = super(ContactForm, self).save(commit=False)
