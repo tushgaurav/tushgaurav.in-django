@@ -116,6 +116,7 @@ li a,
 }
 
 h1 {
+  color: var(--highlight-color);
   padding-left: 1rem;
 }
 
@@ -424,15 +425,18 @@ fieldset {
 
 .blogs .author {
   color: var(--base-color);
-  margin: 0 0 0.6em 0;
+  margin: 0.3em 0 0.6em 0;
 }
 
 .blogs .date {
   display: inline-block;
-  color: gray;
+  color: rgb(22, 26, 48);
   font-size: 0.9em;
-  margin: 0 0 0.6em 0;
+  margin: 0.3em 0 0.6em 0.8em;
   font-weight: 300;
+  padding: 0.2em 0.4em;
+  background-color: #98d0ee;
+  border-radius: 100px;
 }
 
 /* mddia queries for main layout */
