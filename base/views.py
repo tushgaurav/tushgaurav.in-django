@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 from .models import Quote, Post
@@ -17,6 +18,28 @@ def postView(request):
         'posts': queryset
     }
     return render(request, 'base/post_condensed.html', context)
+
+def profileView(request, username):
+    user = User.objects.get(username=username)
+    if user:
+        if request.user.is_authenticated:
+            context = {
+                "firstName": user.first_name,
+                "lastName": user.last_name,
+                "username": username,
+                "email": user.email,
+            }
+            return render(request, 'base/profile.html', context)
+        else:
+            context = {
+                "firstName": user.first_name,
+                "lastName": user.last_name,
+                "username": username,
+            }
+            return render(request, 'base/profile.html', context)
+    else:
+        messages.error(request, "Account for " + username + " not found")
+        return redirect('profile')
 
 def postDetail(request, slug):
     post = Post.objects.get(slug=slug)

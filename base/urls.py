@@ -10,6 +10,7 @@ urlpatterns = [
     path("about/", views.about, name='about'),
     path("skills/", views.skills, name='skills'),
     path("contact/", views.contact, name='contact'),
+    path("u/<str:username>/", views.profileView, name="profile"),
     path("blogs/", views.postView, name="posts"),
     path("blogs/<slug:slug>/", views.postDetail, name="post_detailed"),
 
