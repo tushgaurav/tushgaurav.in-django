@@ -9,7 +9,7 @@ Blogs - Tushar Gaurav
 {% for blog in posts %}
   <div class="blog-condensed-view">
     <a href="{% url 'post_detailed' blog.slug %}" class="title">{{ blog.title }}</a>
-    <span class="author">{{ blog.author }}</span>
+    <a class="author" href="{% url 'profile' blog.author %}">{{ blog.author }}</a>
     <span class="date">
       <span class="date-full">{{ blog.created_on.date }}</span>
       <span class="time">{{ blog.created_on.time }}</span>

@@ -70,6 +70,12 @@ body {
   text-transform: none;
 }
 
+.user_info > div {
+  display: flex;
+  gap: 0.1em;
+  flex-flow: row wrap;
+}
+
 #menu-icon {
   display: none;
   width: 40px;
@@ -426,6 +432,7 @@ fieldset {
 .blogs .author {
   color: var(--base-color);
   margin: 0.3em 0 0.6em 0;
+  text-decoration: none;
 }
 
 .blogs .date {

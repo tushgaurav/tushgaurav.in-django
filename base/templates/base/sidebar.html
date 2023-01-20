@@ -16,7 +16,9 @@
     <div class="user_info">
       {% if request.user.is_authenticated %}
       <!--  -->
-      Welcome, {{ request.user.username }}!
+      <div>
+        Welcome, <a class="profile_link" href="{% url 'profile' request.user.username %}">{{ request.user.username }}</a>!
+      </div>
       <!--  -->
       <a href="{% url 'logout' %}">logout</a>
       {% else %}

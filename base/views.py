@@ -39,7 +39,7 @@ def profileView(request, username):
             return render(request, 'base/profile.html', context)
     else:
         messages.error(request, "Account for " + username + " not found")
-        return redirect('profile')
+        return redirect("404")
 
 def postDetail(request, slug):
     post = Post.objects.get(slug=slug)

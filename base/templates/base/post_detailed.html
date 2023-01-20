@@ -8,7 +8,7 @@ Blogs - Tushar Gaurav
 
 <div class="blog-extended-view">
 <h2>{{ blog.title }}</h2>
-<span class="author">{{ blog.author }}</span>
+<span class="author"><a href="{% url 'profile' blog.author %}">{{ blog.author }}</a></span>
 <span class="date">
     <span class="date-full">{{ blog.created_on.date }}</span>
     <span class="time">{{ blog.created_on.time }}</span>
