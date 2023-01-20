@@ -3,6 +3,7 @@ import random
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
+from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
@@ -13,9 +14,13 @@ from .forms import CreateUserForm, ContactForm
 
 
 def postView(request):
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    query = request.GET.get('q')
+    if query:
+        results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+    else:
+        results = Post.objects.all().order_by('-created_on')
     context = {
-        'posts': queryset
+        'posts': results
     }
     return render(request, 'base/post_condensed.html', context)
 
