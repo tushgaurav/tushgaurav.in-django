@@ -42,6 +42,7 @@ img {
 p {
   line-height: 105%;
   max-width: 95ch;
+  padding: 0.5em;
 }
 
 .center {
@@ -207,10 +208,30 @@ li a,
   text-decoration: none;
 }
 
+.button {
+  padding: 0.5em 1em;
+  background: var(--base-color);
+  border-radius: 10px;
+  color: var(--main-color);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+}
+
+.button a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
 .plain-button {
   font-weight: 400;
   font-size: 1.3em;
   line-height: 36px;
+  text-decoration: none;
+}
+
+.plain-button a {
   text-decoration: none;
 }
 
