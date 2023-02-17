@@ -69,3 +69,42 @@ function animateHero(duration, delay) {
     delay: delay - 1,
   });
 }
+
+const p2 = document.querySelector(".p2");
+const words = [
+  "DESIGNER",
+  "DEVELOPER",
+  "CREATIVE",
+  "ARCHITECH",
+  "ENGINEER",
+  "ARTISAN",
+  "WIZARD",
+];
+let wordIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < words[wordIndex].length) {
+    p2.textContent += words[wordIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 50);
+  } else {
+    setTimeout(erase, 2000);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    p2.textContent = words[wordIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, 10);
+  } else {
+    wordIndex++;
+    if (wordIndex >= words.length) {
+      wordIndex = 0;
+    }
+    setTimeout(type, 50);
+  }
+}
+
+type();
