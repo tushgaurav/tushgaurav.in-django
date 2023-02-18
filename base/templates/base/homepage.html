@@ -9,32 +9,28 @@ Tushar Gaurav | Software Developer & Graphic Designer
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/blob_position.css' %}">
 <script src="https://kit.fontawesome.com/4ef8f405a5.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.17/fullpage.min.js" integrity="sha512-zAHJKGyoPf2Y20Wi4uo32sa/vSvwKfY4tYUt6gJfmkA79X0wt5ZfaxL5GqJ5cMnmvGslWi5PKTo51rHRZqYbJg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endblock %}
 
 {% block content %} 
 
-<div class="main">
-        <video class="video-bg" autoplay muted loop>
+<div class="section main">
+
+        <video class="video-bg" autoplay muted loop data-keepplaying>
             <source src="{% static '/videos/hero-bg.mp4' %}" type="video/mp4">
         </video>
-
-        <div class="inner-text">
+        
+        <div tabindex="-1" class="inner-text">
             <p class="p1">WEB</p>
             <p class="p2"></p>
         </div>
-  </a>
+        
 </div>
 
-<img src="{% static 'images/homepage/blobs/blob1.png' %}" alt="Blob Image 1" class="blob-1">
-<img src="{% static 'images/homepage/blobs/blob2.png' %}" alt="Blob Image 1" class="blob-2">
-<img src="{% static 'images/homepage/blobs/blob3.png' %}" alt="Blob Image 1" class="blob-3">
-<img src="{% static 'images/homepage/blobs/blob4.png' %}" alt="Blob Image 1" class="blob-4">
 
-
-<div class="center">
-    
+<div class="section center">
     <section class="hero">
-        <div>
+        <div class="hero-top">
             <div>
                 <h1 class="branding">FRONT END DESIGNER, WEB DEVELOPER AND 3D ARTIST</h1>
                 <div class="button-container">
