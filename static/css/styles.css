@@ -700,6 +700,21 @@ fieldset {
     right: 20px;
   }
 
+  .main {
+    min-height: 60vh;
+  }
+
+  .inner-text {
+    background-color: transparent;
+    background: none;
+    border: none;
+    animation: none;
+  }
+
+  .center {
+    height: auto;
+  }
+
   .form {
     width: auto;
     min-width: 90%;
