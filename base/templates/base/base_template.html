@@ -36,7 +36,7 @@
       {% include 'base/sidebar.html' %}
 
       <!-- main content goes inside this div -->
-      <div class="main-content">{% block content %} {% endblock %}</div>
+      <div  id="fullpage" class="main-content">{% block content %} {% endblock %}</div>
     </div>
     {% include 'base/mobile_footer.html' %}
     <script src="{% static 'scripts/responsive_nav.js' %}"></script>
@@ -44,6 +44,7 @@
     <!-- main animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{% static 'scripts/animation.js' %}"></script>
+    
     
   </body>
 </html>
