@@ -31,6 +31,10 @@ body {
 
 /* Basic Styles & Utility Classes*/
 
+.fp-watermark {
+  display: none;
+}
+
 img {
   max-width: 100%;
 }
@@ -49,6 +53,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 article {
@@ -176,30 +181,44 @@ li a,
 
 /* Homepage Styles */
 .hero {
-  margin-top: 2em;
-  margin-bottom: 2em;
   padding: 1em;
-}
-
-.hero > div {
+  margin: 2em 0em;
   max-width: 900px;
-  display: flex;
-  align-items: center;
 }
 
-.hero > div > div {
-  width: 50%;
-}
-
-.hero > div > img {
-  width: 50%;
-  max-width: 300px;
+.hero-top {
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  padding: 2em 0;
 }
 
 /* Animated hero text */
 .inner-text {
   position: relative;
   font-size: 50px;
+  /* background-color: rgba(3, 4, 94, 0.4); */
+  background: linear-gradient(
+    90deg,
+    rgba(34, 97, 189, 1) 0%,
+    rgba(38, 38, 198, 0.3136029411764706) 13%,
+    rgba(86, 12, 214, 0.461) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  border: solid 1px var(--main-color);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .p1,
@@ -279,7 +298,7 @@ li a,
   font-style: normal;
   font-weight: 400;
   font-size: 1.5em;
-  line-height: 84%;
+  line-height: 99%;
   max-width: 50ch;
 }
 

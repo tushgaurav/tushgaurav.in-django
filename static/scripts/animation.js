@@ -1,7 +1,8 @@
 // animate only on the homepage
 if (page == "homepage") {
   animateSidebar(2);
-  animateHero(0.5, 3);
+  animateHero(0.5, 6);
+  animateVideo(4, 1.5);
 }
 
 // animation for the sidebar
@@ -67,6 +68,22 @@ function animateHero(duration, delay) {
     opacity: 0,
     duration: duration,
     delay: delay - 1,
+  });
+}
+
+// Animation for the Video
+function animateVideo(duration, delay) {
+  gsap.from("video", {
+    xPercent: 100,
+    opacity: 0,
+    scale: 10,
+    duration: duration,
+    delay: delay,
+  });
+
+  gsap.from(".inner-text", {
+    scale: 0,
+    yPercent: -100,
   });
 }
 
