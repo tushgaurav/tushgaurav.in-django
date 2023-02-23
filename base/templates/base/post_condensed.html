@@ -4,7 +4,7 @@ Blogs - Tushar Gaurav
 {% endblock %}
 
 {% block content %}
-<h1>Blog Posts</h1>
+<h1 class="main_heading">Blog Posts</h1>
 
 <div class="search">
   <form method="get" action="">
@@ -24,7 +24,7 @@ Blogs - Tushar Gaurav
       <span class="date-full">{{ blog.created_on.date }}</span>
       <span class="time">{{ blog.created_on.time }}</span>
     </span>
-    <p class="content">{{ blog.content|truncatechars:200 }}</p>
+    <p class="content">{{ blog.description }}</p>
   </div>
 {% endfor %}
 </div>
