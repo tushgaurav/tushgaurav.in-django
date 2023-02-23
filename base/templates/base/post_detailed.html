@@ -17,6 +17,7 @@ Blogs - Tushar Gaurav
 
 <div class="blog-extended-view">
 <h2>{{ blog.title }}</h2>
+<span class="back"><a href="{% url 'posts' %}">all blogs</a></span>
 <span class="author"><a href="{% url 'profile' blog.author %}">{{ blog.author }}</a></span>
 <span class="date">
     <span class="date-full">{{ blog.created_on.date }}</span>
@@ -24,7 +25,6 @@ Blogs - Tushar Gaurav
 </span>
 <div class="content">{{ blog.content | markdown | safe }}
 
-    <pre><code>print("hello")</code></pre>
 
     <script src="https://utteranc.es/client.js"
         repo="tushgaurav/tushgaurav-comments"
@@ -44,6 +44,8 @@ Blogs - Tushar Gaurav
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+<script src="{% static 'scripts/lib/remove_branding.js' %}"></script>
 
 <script>
 document.querySelectorAll('code').forEach((block) => {
