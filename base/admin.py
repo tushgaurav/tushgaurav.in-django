@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Message, Post
+from .models import Message, BlogPost
 
 admin.site.site_title = "Tushar Gaurav"
 admin.site.site_header = "tushgaurav.in | Administration Portal"
@@ -10,9 +10,9 @@ class MessageAdmin(admin.ModelAdmin):
 
 admin.site.register(Message, MessageAdmin)
 
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('author', 'title', 'slug', 'status', 'created_on')
+class BlogPostAdmin(admin.ModelAdmin):
+    list_display = ('author', 'title', 'description', 'slug', 'status', 'created_on')
     list_filter = ('status',)
     search_fields = ('title', 'content')
 
-admin.site.register(Post, PostAdmin)
+admin.site.register(BlogPost, BlogPostAdmin)
