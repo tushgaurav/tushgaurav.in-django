@@ -11,8 +11,8 @@ urlpatterns = [
     path("skills/", views.skills, name='skills'),
     path("contact/", views.contact, name='contact'),
     path("u/<str:username>/", views.profileView, name="profile"),
-    path("blogs/", views.postView, name="posts"),
-    path("blogs/<slug:slug>/", views.postDetail, name="post_detailed"),
+    path("blogs/", views.blogView, name="posts"),
+    path("blogs/<slug:slug>/", views.blogFull, name="post_detailed"),
 
     path("<str:any>/", views.not_found, name='not-found')
 ]

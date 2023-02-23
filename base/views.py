@@ -9,19 +9,19 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
-from .models import Quote, Post
+from .models import Quote, BlogPost
 from .forms import CreateUserForm, ContactForm
 
-
-def postView(request):
+def blogView(request):
     query = request.GET.get('q')
     if query:
-        results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+        results = BlogPost.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
     else:
-        results = Post.objects.all().order_by('-created_on')
+        results = BlogPost.objects.all().order_by('-created_on')
     context = {
         'posts': results
     }
+
     return render(request, 'base/post_condensed.html', context)
 
 def profileView(request, username):
@@ -46,10 +46,10 @@ def profileView(request, username):
         messages.error(request, "Account for " + username + " not found")
         return redirect("404")
 
-def postDetail(request, slug):
-    post = Post.objects.get(slug=slug)
+def blogFull(request, slug):
+    post = BlogPost.objects.get(slug=slug)
     context = {
-        'blog': post
+        'blog': post,
     }
     return render(request, 'base/post_detailed.html', context)
 

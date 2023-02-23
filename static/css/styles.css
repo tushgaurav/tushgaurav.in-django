@@ -81,6 +81,11 @@ h1 {
   padding-left: 1rem;
 }
 
+.main_heading {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
 h2 {
   font-size: 1.6em;
 }
@@ -631,8 +636,9 @@ fieldset {
 }
 
 .blog-extended-view h2 {
+  margin-top: 2rem;
   color: var(--base-color);
-  margin-bottom: 0.8em;
+  font-size: 2em;
 }
 
 .content {
@@ -738,6 +744,10 @@ fieldset {
     padding: 22px;
     text-align: center;
     box-shadow: var(--box-shadow-block);
+  }
+
+  .blog-extended-view h2 {
+    margin-top: 0;
   }
 }
 

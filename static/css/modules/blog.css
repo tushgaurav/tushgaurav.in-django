@@ -1,0 +1,46 @@
+@import url(https://fonts.bunny.net/css?family=poppins:400,400i,700,700i,900);
+@import url(https://fonts.bunny.net/css?family=fira-code:400);
+.utterances {
+  margin-top: 2em;
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+.content h1 {
+  font-size: 1.6em;
+  padding: 1rem 0;
+}
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  padding: 0.5rem 0;
+}
+.content h2 {
+  font-size: 1.3em;
+  margin: 0;
+}
+.content a {
+  color: rgb(30, 0, 127);
+}
+.content a:visited {
+  color: var(--highlight-color);
+}
+.content a:hover {
+  color: rgb(32, 20, 77);
+}
+.content p {
+  max-width: 100ch;
+  padding: 0.5rem 0;
+}
+.content code {
+  background-color: #fff;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  padding: 1rem;
+  border-radius: 2px;
+}/*# sourceMappingURL=blog.css.map */

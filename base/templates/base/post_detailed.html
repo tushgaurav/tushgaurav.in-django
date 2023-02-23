@@ -1,6 +1,15 @@
 {% extends 'base/base_template.html' %}
+
 {% block title %}
 Blogs - Tushar Gaurav
+{% endblock %}
+
+{% load markdown_extras %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/modules/blog.css' %}">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
 {% endblock %}
 
 {% block content %}
@@ -13,8 +22,32 @@ Blogs - Tushar Gaurav
     <span class="date-full">{{ blog.created_on.date }}</span>
     <span class="time">{{ blog.created_on.time }}</span>
 </span>
-<p class="content">{{ blog.content }}</p>
+<div class="content">{{ blog.content | markdown | safe }}
+
+    <pre><code>print("hello")</code></pre>
+
+    <script src="https://utteranc.es/client.js"
+        repo="tushgaurav/tushgaurav-comments"
+        issue-term="pathname"
+        theme="boxy-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<style>
+    .timeline-header em {
+        display: none;
+    }
+</style>
 </div>
 
 </div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+<script>
+document.querySelectorAll('code').forEach((block) => {
+    hljs.highlightBlock(block);
+});
+</script>
 {% endblock %}
