@@ -25,20 +25,23 @@
 
   <!-- END -->
 
-  <div class="form">
-    <form class="login-form" method="POST" action="">
-        {% csrf_token %}
-        {{ form.name }}
-        {{ form.username }}
-        {{ form.email }}
-        {{ form.password1 }}
-        {{ form.password2 }}
-        {{ form.captcha }}
-        <button type="submit">register</button>
-        <p class="message">
-          Already have a account? <a href="{% url 'register' %}">login</a>
-        </p>
-    </form>
+  <div class="form-container">
+
+    <div class="form">
+      <form class="login-form" method="POST" action="">
+          {% csrf_token %}
+          {{ form.name }}
+          {{ form.username }}
+          {{ form.email }}
+          {{ form.password1 }}
+          {{ form.password2 }}
+          {{ form.captcha }}
+          <button type="submit">register</button>
+          <p class="message">
+            Already have a account? <a href="{% url 'register' %}">login</a>
+          </p>
+      </form>
+    </div>
   </div>
 
   <!-- Old Django Default form -->
