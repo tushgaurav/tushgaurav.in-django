@@ -30,7 +30,7 @@ DEBUG = True
 
 load_dotenv()
 
-ALLOWED_HOSTS = ['tushgaurav.in', 'www.tushgaurav.in', 'beta.tushgaurav.in', '127.0.0.1',]
+ALLOWED_HOSTS = ['tushgaurav.in', 'www.tushgaurav.com', 'beta.tushgaurav.in', '127.0.0.1',]
 
 CSRF_TRUSTED_ORIGINS = ['https://*.tushgaurav.in','https://*.127.0.0.1']
 
