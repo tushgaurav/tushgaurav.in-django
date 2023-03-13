@@ -12,6 +12,9 @@ from django.contrib.auth.decorators import login_required
 from .models import Quote, BlogPost
 from .forms import CreateUserForm, ContactForm
 
+from .lib.email import send_email
+from .lib.email import templates
+
 def blogView(request):
     query = request.GET.get('q')
     if query:
@@ -137,6 +140,17 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save(request=request)
+            
+            # send email
+            email = request.user.email
+            name = request.user.first_name + " " + request.user.last_name
+            if len(name) < 3:
+                name = request.user.username
+            form_message = form.cleaned_data['content']
+
+            response = templates.contact_response(name, form_message)
+            send_email.send_simple_message(email, "Thanks for contacting me!", response)
+
             messages.success(request, 'Form submitted successfully.')
         else:
             messages.error(request, 'Form is invalid, Please try again.')
