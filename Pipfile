@@ -16,6 +16,8 @@ whitenoise = "==6.3.0"
 django-recaptcha = "==3.0.0"
 tzdata = "==2022.7"
 markdown = "*"
+sentry-sdk = {extras = ["django"], version = "*"}
+requests = "*"
 
 [dev-packages]
 
