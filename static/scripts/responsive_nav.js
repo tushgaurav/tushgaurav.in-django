@@ -7,17 +7,17 @@ const logo = document.querySelector(".logo");
 
 if (window.innerWidth < 700) {
   logo.style.width = "40%";
-}
 
-if (nav.style.display === "block") {
-  nav.style.display = "none";
-} else {
-  nav.style.display = "block";
-}
-if (nav.style.display === "block") {
-  nav.style.display = "none";
-} else {
-  nav.style.display = "block";
+  if (nav.style.display === "block") {
+    nav.style.display = "none";
+  } else {
+    nav.style.display = "block";
+  }
+  if (nav.style.display === "block") {
+    nav.style.display = "none";
+  } else {
+    nav.style.display = "block";
+  }
 }
 
 menuIcon.addEventListener("click", () => {
