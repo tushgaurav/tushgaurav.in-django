@@ -1,7 +1,27 @@
+// Main animations for website
+
 // animate only on the homepage
 if (page == "homepage") {
   animateSidebar(2);
-  animateHero(0.5, 6);
+
+  // used intersection observer api to animate hero when visible in viewport
+  let options = {
+    rootMargin: "0px",
+    threshold: 1.0,
+  };
+
+  var times = 0;
+  let observer = new IntersectionObserver(() => {
+    times = times + 1;
+    // console.log(times);
+    if (times < 3) {
+      animateHero(0.5, 3);
+    }
+  }, options);
+
+  let target = document.querySelector(".bio");
+  observer.observe(target);
+
   animateVideo(4, 1.5);
 }
 
@@ -40,6 +60,7 @@ function animateSidebar(duration) {
 }
 
 // animation for the hero section (homepage)
+
 function animateHero(duration, delay) {
   gsap.from(".branding", {
     opacity: 0,

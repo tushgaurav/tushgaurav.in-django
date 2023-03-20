@@ -992,6 +992,12 @@ fieldset {
     flex: 1;
     position: relative;
     width: 100%;
+    padding: 0;
+    /* align-items: flex-start; */
+  }
+
+  .logo {
+    margin-right: 0;
   }
 
   .main-content {
@@ -1015,6 +1021,7 @@ fieldset {
 
   nav {
     display: none;
+    margin: 0 auto;
   }
 
   nav ul {
