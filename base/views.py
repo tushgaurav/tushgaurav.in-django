@@ -149,7 +149,7 @@ def contact(request):
             form_message = form.cleaned_data['content']
 
             response = templates.contact_response(name, form_message)
-            send_email.send_simple_message(email, "Thanks for contacting me!", response)
+            send_email.send_simple_message(email, "Thanks for contacting me!", response, True)
 
             messages.success(request, 'Form submitted successfully.')
         else:
