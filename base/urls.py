@@ -14,6 +14,4 @@ urlpatterns = [
     path("u/<str:username>/", views.profileView, name="profile"),
     path("blogs/", views.blogView, name="posts"),
     path("blogs/<slug:slug>/", views.blogFull, name="post_detailed"),
-
-    path("<str:any>/", views.not_found, name='not-found')
 ]
