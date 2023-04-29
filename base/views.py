@@ -8,12 +8,23 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_GET
 
 from .models import Quote, BlogPost
 from .forms import CreateUserForm, ContactForm
 
 from .lib.email import send_email
 from .lib.email import templates
+
+@require_GET
+def robots_txt(request):
+    lines = [
+        "User-Agent: *",
+        "Disallow: /admin/",
+        "Disallow: /u/",
+    ]
+
+    return HttpResponse("\n".join(lines), content_type="text/plain")
 
 def blogView(request):
     query = request.GET.get('q')
