@@ -16,7 +16,6 @@ from .forms import CreateUserForm, ContactForm
 from .lib.email import send_email
 from .lib.email import templates
 
-
 @require_GET
 def robots_txt(request):
     lines = [
@@ -68,16 +67,17 @@ def blogFull(request, slug):
     }
     return render(request, 'base/post_detailed.html', context)
 
-def not_found(request, exception):
+def not_found(request, any):
     # Get a random quote for the 404 error screen
     quote_list = list(Quote.objects.all())
     random_quote = random.choice(quote_list)
 
     context = {
+        "url": any,
         "error_message": random_quote.text,
         "code": "404"
     }
-    return render(request, 'base/not_found.html', context, status=404)
+    return render(request, 'base/not_found.html', context)
 
 def loginUser(request):
     if request.user.is_authenticated:
@@ -179,6 +179,3 @@ def submit_suggestion(request):
         pass
     else:
         return redirect('home')
-    
-
-handler404 = "base.views.page_not_found_view"
