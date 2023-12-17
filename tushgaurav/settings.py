@@ -45,11 +45,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*r!ao55*nky7%#f-1#n^cz5vkby8*@rd6ise8ckw!dwh+-spdu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 load_dotenv()
 
-ALLOWED_HOSTS = ['tushgaurav.in', 'www.tushgaurav.in', 'beta.tushgaurav.in', '127.0.0.1',]
+ALLOWED_HOSTS = ['old.tushgaurav.in', '127.0.0.1',]
 
 CSRF_TRUSTED_ORIGINS = ['https://*.tushgaurav.in','https://*.127.0.0.1']
 
